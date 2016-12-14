@@ -1,0 +1,109 @@
+﻿html, body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    color: #ffffff;
+    font-family: "Avenir LT W01 35 Light", Arial, Helvetica, sans-serif;
+}
+
+#map {
+    position: absolute;
+    top: 60px;
+    bottom: 0px;
+    width: 100%;
+}
+
+#canvas {
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    pointer-events: none;
+}
+
+#top {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 60px;
+    background-color: #2D6CA2;
+}
+
+#heading {
+    position: absolute;
+    margin-top: 7px;
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+}
+
+#esri-logo {
+    position: absolute;
+    margin-top: 5px;
+    height: 50px;
+    text-align: left;
+}
+
+#help-button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 200px;
+    height: 60px;
+    background-color: #5b89b0;
+    cursor: pointer;
+}
+
+    #help-button:hover {
+        background-color: #b3c8db;
+    }
+
+#help-button-text {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 22px;
+    pointer-events: none;
+}
+
+#help-window {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin-top: -500px;
+    width: 200px;
+    background: rgba(178, 0, 255, 0.5);
+}
+
+#help-window-text1 {
+    margin: 10px 10px 0px 10px;
+}
+
+#help-window-text2 {
+    margin: 10px 10px 10px 10px;
+}
+
+#footer {
+    display: none;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 50px;
+}
+
+#wrap {
+    text-align: center;
+}
+
+#progress {
+    display: block;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -200px;
+    pointer-events: none;
+    width: 400px;
+}
+
+#months{
+    margin-left: 10px;
+}

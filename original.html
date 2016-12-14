@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Esri | Prototype | Animated Flow</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    <meta name='viewport' content='width=device-width,initial-scale=1, maximum-scale=1,user-scalable=no'>
+    <meta name='author' content='Applications Prototype Lab' />
+    <link type='image/ico' rel='shortcut icon' href='img/favicon.ico' />
+    <link type='image/ico' rel='icon' href='img/favicon.ico' />
+    <link href='img/apple-touch-icon.png' rel='apple-touch-icon' />
+    <link type='text/css' rel='stylesheet' href='//fast.fonts.com/cssapi/23855eec-5fdf-4594-9898-0113a04bfef0.css' />
+    <link type='text/css' rel='stylesheet' href='//js.arcgis.com/3.12/esri/css/esri.css'>
+    <link type='text/css' rel='stylesheet' href='css/bootstrap.min.css' />
+    <link type='text/css' rel='stylesheet' href='original.css'>
+    <script type='text/javascript' src='//js.arcgis.com/3.12compact/'></script>
+    <script type='text/javascript' src='js/jquery-2.1.1.min.js'></script>
+    <script type='text/javascript' src='js/bootstrap.min.js'></script>
+    <script type='text/javascript' src='original.js'></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-10866840-7', 'esri.com');
+        ga('send', 'pageview');
+    </script>
+</head>
+<body>
+    <div id='map'></div>
+    <canvas id='canvas'></canvas>
+    <div id='top'>
+        <div id='heading'>2014 Animated Flow</div>
+        <img id='esri-logo' src='img/esri-transparent.png' />
+    </div>
+    <div id='help-window'>
+        <div id='help-window-text1'>Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.</div>
+        <div id='help-window-text2'>It is a way I have of driving off the spleen and regulating the circulation.</div>
+    </div>
+    <div id='help-button'>
+        <div id='help-button-text'></div>
+    </div>
+    <div id='footer'>
+        <div id='wrap'>
+            <div id='displays' class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    <input type="radio" name="display" id="display1"> Flow
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="display" id="display2"> Normalized
+                </label>
+            </div>
+            <div id='months' class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    <input type="radio" name="options" id="month1"> Jan
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="options" id="month2"> Feb
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="options" id="month3"> Mar
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="options" id="month4"> Apr
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="options" id="month5"> May
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="options" id="month6"> Jun
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="options" id="month7"> Jul
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="options" id="month8"> Aug
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="options" id="month9"> Sep
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="options" id="month10"> Oct
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="options" id="month11"> Nov
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="options" id="month12"> Dec
+                </label>
+            </div>
+        </div>
+    </div>
+    <div id='progress' class="progress progress-striped active">
+        <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+            <span id="progress-bar-text"></span>
+        </div>
+    </div>
+</body>
+</html>

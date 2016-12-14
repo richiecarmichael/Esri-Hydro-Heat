@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head prefix='og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#'>
+    <title>Hydro Static Maps</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    <meta name='viewport' content='width=device-width,initial-scale=1, maximum-scale=1,user-scalable=no'>
+    <meta name='author' content='Esri' />
+    <meta name='keywords' content='esri usgs animated river flow 2014' />
+    <meta name='description' content='Animated river flow for US rivers in 2014' />
+    <meta property='og:title' content='Animated Flow' />
+    <meta property='og:description' content='Animated river flow for US rivers in 2014' />
+    <meta property='og:image' content='img/esri-transparent.png' />
+    <link type='image/ico' rel='shortcut icon' href='img/favicon.ico' />
+    <link type='image/ico' rel='icon' href='img/favicon.ico' />
+    <link type='image/ico' rel='apple-touch-icon' href='img/apple-touch-icon.png' />
+    <link type='text/css' rel='stylesheet' href='//fast.fonts.com/cssapi/23855eec-5fdf-4594-9898-0113a04bfef0.css' />
+    <link type='text/css' rel='stylesheet' href='css/jquery-ui.min.css' />
+    <link type='text/css' rel='stylesheet' href='css/bootstrap.min.css' />
+    <link type='text/css' rel='stylesheet' href='//js.arcgis.com/3.12/esri/css/esri.css'>
+    <link type='text/css' rel='stylesheet' href='static.css'>
+    <script type='text/javascript' src='//www.google.com/jsapi'></script>
+    <script type='text/javascript'>
+        google.load('visualization', '1', {
+            'packages': ['corechart']
+        });
+    </script>
+    <script type='text/javascript' src='js/jquery-2.1.1.min.js'></script>
+    <script type='text/javascript' src='js/jquery-ui.min.js'></script>
+    <script type='text/javascript' src='js/bootstrap.min.js'></script>
+    <script type='text/javascript' src='//js.arcgis.com/3.12compact/'></script>
+    <script type='text/javascript' src='config.js'></script>
+    <script type='text/javascript' src='static.js'></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-10866840-7', 'esri.com');
+        ga('send', 'pageview');
+    </script>
+</head>
+<body>
+    <div id='map'></div>
+    <div id='top'>
+        <div id='heading'>Hydro Static Maps</div>
+        <img id='esri-logo' src='img/esri-transparent.png' />
+    </div>
+    <div id='help-window'>
+        <div id='legend-chart'></div>
+        <div id='legend-theme' class='btn-group' role="group" data-toggle='buttons'>
+            <label class='btn btn-primary active'>
+                <input type='radio' name='mode' value='order' checked> Order
+            </label>
+            <label class='btn btn-primary'>
+                <input type='radio' name='mode' value='flow'> Flow
+            </label>
+            <label class='btn btn-primary'>
+                <input type='radio' name='mode' value='comparison'> Comparison
+            </label>
+        </div>
+        <div id='legend-flow'>
+            <div class='rc-legend-item'>
+                <div></div>
+                <div>0 - 125m³/s</div>
+            </div>
+            <div class='rc-legend-item'>
+                <div></div>
+                <div>125 - 600m³/s</div>
+            </div>
+            <div class='rc-legend-item'>
+                <div></div>
+                <div>600 - 1435m³/s</div>
+            </div>
+            <div class='rc-legend-item'>
+                <div></div>
+                <div>1435 - 3656m³/s</div>
+            </div>
+            <div class='rc-legend-item'>
+                <div></div>
+                <div>3656 - 12565m³/s</div>
+            </div>
+            <div class='rc-legend-item'>
+                <div></div>
+                <div>&#62; 12565m³/s</div>
+            </div>
+        </div>
+        <div id='legend-comparison'>
+            <div class='rc-legend-item'>
+                <div></div>
+                <div>0% - 20%</div>
+            </div>
+            <div class='rc-legend-item'>
+                <div></div>
+                <div>20% - 40%</div>
+            </div>
+            <div class='rc-legend-item'>
+                <div></div>
+                <div>40% - 60%</div>
+            </div>
+            <div class='rc-legend-item'>
+                <div></div>
+                <div>60% - 80%</div>
+            </div>
+            <div class='rc-legend-item'>
+                <div></div>
+                <div>80% - 100%</div>
+            </div>
+            <div class='rc-legend-item'>
+                <div></div>
+                <div>100% - 120%</div>
+            </div>
+            <div class='rc-legend-item'>
+                <div></div>
+                <div>120% - 140%</div>
+            </div>
+            <div class='rc-legend-item'>
+                <div></div>
+                <div>140% - 160%</div>
+            </div>
+            <div class='rc-legend-item'>
+                <div></div>
+                <div>160% - 180%</div>
+            </div>
+            <div class='rc-legend-item'>
+                <div></div>
+                <div>&#62; 180%</div>
+            </div>
+        </div>
+        <div id='legend-order'>
+            <div class='rc-legend-item'>
+                <div></div>
+                <div>5</div>
+            </div>
+            <div class='rc-legend-item'>
+                <div></div>
+                <div>6</div>
+            </div>
+            <div class='rc-legend-item'>
+                <div></div>
+                <div>7</div>
+            </div>
+            <div class='rc-legend-item'>
+                <div></div>
+                <div>8</div>
+            </div>
+            <div class='rc-legend-item'>
+                <div></div>
+                <div>9</div>
+            </div>
+        </div>
+    </div>
+    <div id='help-button'>
+        <div id='help-button-text'></div>
+    </div>
+    <div id='bottom'>
+        <div id='bottom-date'></div>
+        <div id='slider'></div>
+    </div>
+</body>
+</html>
